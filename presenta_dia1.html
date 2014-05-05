@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div id="bienvenidos-a-r" class="slide section level1">
+<h1>Bienvenidos a R</h1>
+<h2 id="contenidos">Contenidos</h2>
+<ol style="list-style-type: decimal">
+<li>Introducción al entorno R: instalación y uso básico. Librerías.</li>
+<li>Conceptos básicos del lenguaje R: instrucciones sencillas, scripts y funciones sencillas.</li>
+<li>Introducción a la interfaz Rstudio.</li>
+<li>Gráficos en R: el comando plot() y librerías específicas.</li>
+<li>Librería RCommander y técnicas de análisis estadístico.</li>
+</ol>
+</div>
+<div id="introducción-al-entorno-r-instalación-y-uso-básico.-librerías." class="slide section level1">
+<h1><br/><br/><br/><br/>Introducción al entorno R: instalación y uso básico. Librerías.</h1>
+</div>
+<div id="qué-es-r-y-qué-es-lo-que-no-es-i" class="slide section level1">
+<h1>¿Qué es R (y qué es lo que no es)? (I)</h1>
+<ul>
+<li>R es un entorno de libre acceso para computación estadística y gráficos así como para programación. Tiene una serie de características que lo hacen bastante asequible cuando empezamos a trabajar por primera vez con él.
+<ul>
+<li>Utiliza un lenguaje muy bien desarrollado pero simple.</li>
+<li>Su funcionalidad es la de un intérprete de comandos (se ejecutan las instrucciones a medida que las introducimos) y la de un lenguaje de programación (se puede realizar un script o conjunto de instrucciones a modo de programa).</li>
+<li>La instalación por primera vez proporciona un entorno básico de R casi sin ninguna dificultad.</li>
+<li>Permite un rápido desarrollo de nuevas herramientas para resolver problemas.</li>
+<li>Estos desarrollos se distribuyen en forma de librerías que cualquier usuario puede descargar e instalar para personalizar su propio entorno de R.</li>
+</ul></li>
+</ul>
+<ul>
+<li>R no es un lenguaje de programación que permita realizar aplicaciones ejecutables. Sin embargo, se pueden programar interfaces gráficas para facilitar el uso de los programas a los usuarios pero es preciso que estos tengan instalado R.</li>
+</ul>
+</div>
+<div id="qué-es-r-y-qué-es-lo-que-no-es-y-ii" class="slide section level1">
+<h1>¿Qué es R (y qué es lo que no es)? (y II)</h1>
+<object data="figure/Rdiagram.svg" type="image/svg+xml" 
+  width="80%" height="80%" title="Esquema R y librerías"> 
+</object>
+
+
+</div>
+<div id="en-qué-me-puede-ayudar" class="slide section level1">
+<h1>¿En qué me puede ayudar?</h1>
+<ul>
+<li>Tenemos miedo a utilizar esto y luego venga otra cosa que lo sustituya....</li>
+</ul>
+<ul>
+<li>Sin embargo, si lo pensamos tranquilamente, muchas de las cosas que necesitamos hacer habitualmente (gráficas, problemas de estadística, etc..) no necesitan de un software complicado (SPSS, SAS, etc..).</li>
+</ul>
+<ul>
+<li>Podemos utilizar R para resolver de forma más o menos fácil (depende de lo que hayamos entendido en clase de estadística) muchos de estos problemas. A medida que uno desarrolle trabajos de más dificultad (trabajos, proyectos fin de grado o máster, investigación, etc..) R nos será de mayor utilidad.</li>
+</ul>
+</div>
+<div id="por-donde-empezamos-r-base-y-librerías-o-paquetes.-rstudio" class="slide section level1">
+<h1>¿Por donde empezamos? R Base y librerías o paquetes. Rstudio</h1>
+<ul>
+<li>En principio, se comienza descargando el paquete básico de R (Base R)
+<ul>
+<li>Ir a www.r-project.org(http://www.r-project.org) y descarga la versión de RStudio para tu OS.</li>
+</ul></li>
+</ul>
+<ul>
+<li>El paquete base viene con un conjunto de herramientas básicas de gestión de datos, análisis y funciones gráficas.</li>
+</ul>
+<ul>
+<li>A medida que uno necesita más herramientas, se pueden descargar e instalar entre las +4000 librerías que hay en CRAN las que puedan sernos de ayuda.
+<ul>
+<li>Una librería que utilizaremos en este curso es Rcmdr (RCommander). La instalaremos desde el terminal de comandos de R.</li>
+</ul></li>
+</ul>
+<ul>
+<li>R se puede utilizar básicamente con lo que tenemos en la instalación base (terminal de comandos) pero podemos instalar, de forma adicional, algún otro entorno gráfico que facilite su uso (Rstudio).
+<ul>
+<li>Ir a www.rstudio.org(http://www.rstudio.org) y descarga la versión de RStudio para tu OS.</li>
+</ul></li>
+</ul>
+</div>
+<div id="ya-tengo-esto-instalado...." class="slide section level1">
+<h1>Ya tengo esto instalado....</h1>
+<ul>
+<li>Empezaremos adquiriendo conocimientos básicos de R.
+<ul>
+<li>Se trata de iniciarse en el manejo de R (comienza como exploreR para llegar a ser un useR). Hay excelentes tutoriales en internet para mejorar aprendizaje.
+<ul>
+<li>Por ejemplo, codeschool tiene este tutorial <a href="http://tryr.codeschool.com/levels/1/challenges/1">online R</a> para ensayar con R solo con el navegador, sin necesidad de instalar nada.</li>
+<li>Hay muchos recursos como <a href="http://www.nceas.ucsb.edu/files/scicomp/Dloads/RProgramming/BestFirstRTutorial.pdf">tutorial auto-aprendizaje</a> o <a href="https://wiki.ucl.ac.uk/display/~uctpfos/R-Resources">UCL wiki</a>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<ul>
+<li>Aunque la curva de aprendizaje de R puede ser pronunciada, el soporte de la comunidad de usuarios es muy grande.
+<ul>
+<li>La comunidad es muy activa en foros, páginas web,...</li>
+<li>Buscar en Google una duda siempre retorna algo útil.</li>
+<li>Familiarízate con <a href="http://www.stackoverflow.com">stackoverflow</a></li>
+<li>Si conoces otro software, hay bastante ayuda para el paso a R
+<ul>
+<li><a href="http://dss.princeton.edu/training/RStata.pdf">R para usuarios Stata</a></li>
+<li><a href="http://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf">R para usuarios Matlab</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="conceptos-básicos-del-lenguaje-r-instrucciones-sencillas-scripts-y-funciones-sencillas." class="slide section level1">
+<h1><br/><br/><br/><br/>Conceptos básicos del lenguaje R: instrucciones sencillas, scripts y funciones sencillas.</h1>
+</div>
+<div id="la-consola-de-r.-operaciones-elementales" class="slide section level1">
+<h1>La consola de R. Operaciones elementales</h1>
+<ul>
+<li>El código R puede ser introducido directamente en la consola de comandos o mediante un script. Por ejemplo, se pueden realizar operaciones aritméticas elementales</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># operaciones básicas</span>
+<span class="dv">7</span> +<span class="st"> </span><span class="dv">3</span>
+<span class="dv">7</span> *<span class="st"> </span><span class="dv">3</span>
+<span class="dv">7</span>/<span class="dv">3</span>
+<span class="dv">7</span>%%<span class="dv">3</span>
+<span class="dv">7</span>/<span class="dv">0</span></code></pre>
+<ul>
+<li>Observar que los comandos están separados con un salto de línea (o también con <code>;</code>). Sin embargo, si el comando comienza con el caracter <code>#</code> esa línea no se ejecuta (p.e., apropiado para añadir comentarios explicativo)</li>
+</ul>
+<ul>
+<li>Todo en R (variables, vectores, funciones, gráficos, fórmulas, ...) son objetos.</li>
+</ul>
+</div>
+<div id="la-consola-de-r.-operaciones-elementales-ii" class="slide section level1">
+<h1>La consola de R. Operaciones elementales (II)</h1>
+<ul>
+<li>El objeto más elemental es una variable. Para crear una variable (x) debemos asignar un valor (número, palabra, ...) mediante <code>&lt;-</code> or <code>=</code> . Se recomienda <code>&lt;-</code> .</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">3</span></code></pre>
+<ul>
+<li>Tengamos en cuenta que R es sensible a mayúsculas: <code>x</code> es diferente de <code>X</code></li>
+</ul>
+<ul>
+<li>Una reasignación sobreescribe el contenido de la variable</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> &quot;ahora x es una cadena.&quot;</span>
+x
+x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>)  <span class="co"># c() combina valores en un vector. </span>
+x</code></pre>
+<ul>
+<li>Acceder a elementos de un vector <code>x</code> con <code>x[n]</code></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x
+x[<span class="dv">3</span>:<span class="dv">6</span>]  <span class="co"># elementos 3,4,5,6</span>
+x[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>)]  <span class="co"># elts 1,3 y 6</span>
+x[-<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">6</span>)]  <span class="co"># todos elts excepto 1,3 y 6</span></code></pre>
+</div>
+<div id="ejercicio-1" class="slide section level1">
+<h1>Ejercicio 1</h1>
+<ul>
+<li>crear un vector x con valores 0, 3, 6, 9, 12, 15, 18</li>
+</ul>
+<ul>
+<li>crear un vector y con las palabras {&quot;mis&quot;,&quot;números&quot;,&quot;favoritos&quot;,&quot;son&quot;}</li>
+</ul>
+<ul>
+<li>crear un vector z con todos los elementos de y los 2 últimos elementos de x</li>
+</ul>
+<ul>
+<li>ejecutar <code>typeof(x)</code>, <code>typeof(y)</code> y <code>typeof(z)</code></li>
+</ul>
+<ul>
+<li>crear un vector w con valores el logaritmo de cada elemento de x</li>
+</ul>
+</div>
+<div id="vectores" class="slide section level1">
+<h1>Vectores</h1>
+<ul>
+<li>Veamos algunos ejemplos con vectores</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">3</span>)
+x +<span class="st"> </span><span class="dv">1</span>  <span class="co">#suma 1 a cada elemento del vector</span>
+x/<span class="dv">2</span>  <span class="co">#divide por 2 cada elemento del vector</span>
+<span class="kw">length</span>(x)  <span class="co"># número de elementos del vector</span>
+<span class="kw">max</span>(x)
+<span class="kw">min</span>(x)
+<span class="kw">sum</span>(x)  <span class="co">#suma todos los elementos del vector</span>
+<span class="kw">log</span>(x)  <span class="co">#aplica la función log() a cada elemento del vector</span></code></pre>
+<ul>
+<li>Observar que estamos utilizando las primeras funciones de R (length, max, min, ...). Si se desea obtener la ayuda en particular de una función debemos escribir <code>?</code> seguido del nombre de la función</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="st">`</span><span class="dt">?</span><span class="st">`</span>(sum)
+<span class="st">`</span><span class="dt">?</span><span class="st">`</span>(mean)</code></pre>
+</div>
+<div id="vectores-ii" class="slide section level1">
+<h1>Vectores (II)</h1>
+<ul>
+<li>Ahora, veamos como son las operaciones entre vectores</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">3</span>)
+y &lt;-<span class="st"> </span><span class="dv">4</span>:<span class="dv">6</span>  <span class="co"># también se pueden generar secuencias numéricas sin usar c()</span>
+x +<span class="st"> </span>y
+
+x &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">4</span>
+x +<span class="st"> </span>y  <span class="co"># R da un warning si se suman de diferente longitud</span>
+
+x &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">3</span>
+y &lt;-<span class="st"> </span><span class="dv">4</span>:<span class="dv">6</span>
+x *<span class="st"> </span>y  <span class="co"># producto elemento a elemento</span></code></pre>
+</div>
+<div id="matrices" class="slide section level1">
+<h1>Matrices</h1>
+<ul>
+<li>Veamos como se crea una matriz en R:</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">m1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span>:<span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+m1
+
+m1[<span class="dv">1</span>, <span class="dv">2</span>]
+m1[, <span class="dv">2</span>]
+m1[<span class="dv">1</span>, ]
+m1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</code></pre>
+<ul>
+<li>Seleccionemos partes de una matriz</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(m1)
+m1[<span class="dv">1</span>, <span class="dv">2</span>]
+m1[<span class="dv">2</span>, ]  <span class="co"># fila 2, todas columnas</span>
+m1[, <span class="dv">1</span>]  <span class="co"># todas las filas, columna 1</span>
+m1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)]  <span class="co"># filas 1,3 y columnas 2,3</span></code></pre>
+<ul>
+<li>Algunos ejemplos de operaciones con matrices</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">m1 +<span class="st"> </span>m1
+m1 *<span class="st"> </span>m1  <span class="co"># de nuevo, producto elemento a elemento</span></code></pre>
+</div>
+<div id="otras-operaciones-de-interés-con-vectores-y-matrices" class="slide section level1">
+<h1>Otras operaciones de interés con vectores y matrices</h1>
+<ul>
+<li>Al contrario que con los vectores, ciertas operaciones con matrices no son posibles</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">m2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span>:<span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">FALSE</span>)
+m1 +<span class="st"> </span>m2  <span class="co"># error</span>
+m1 *<span class="st"> </span>m2  <span class="co"># error</span></code></pre>
+<ul>
+<li>¿Y las operaciones usuales de vectores (producto escalar) y matrices (prod. matricial)? Se utiliza el operador <code>%*%</code></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x %*%<span class="st"> </span>y
+
+m2 %*%<span class="st"> </span>m1
+m1 %*%<span class="st"> </span><span class="kw">t</span>(m2)
+m1 %*%<span class="st"> </span>m2</code></pre>
+<ul>
+<li>Para hallar el determinante y la inversa de una matriz</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">m3 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
+<span class="kw">det</span>(m3)  <span class="co">#determinante</span>
+<span class="kw">solve</span>(m3)  <span class="co">#inversa</span></code></pre>
+</div>
+<div id="ejercicio-2" class="slide section level1">
+<h1>Ejercicio 2</h1>
+<ul>
+<li>crear una matriz A de 2x2 con la primera fila 2,3 y la segunda 6,7</li>
+</ul>
+<ul>
+<li>crear una matriz b de 2x1 con los elementos 1,5</li>
+</ul>
+<ul>
+<li>resolver la ecuación Ax=b</li>
+</ul>
+</div>
+<div id="operaciones-lógicas-comparaciones" class="slide section level1">
+<h1>Operaciones lógicas (comparaciones)</h1>
+<ul>
+<li>Veamos como se hacen comparaciones en R</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span>
+y &lt;-<span class="st"> </span><span class="dv">3</span>
+x ==<span class="st"> </span>y  <span class="co"># comparar variables</span>
+x &lt;<span class="st"> </span>y
+x &gt;<span class="st"> </span>y
+
+x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)
+y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>)
+x ==<span class="st"> </span>y  <span class="co"># comparar vectores</span>
+x &lt;<span class="st"> </span>y
+x &gt;<span class="st"> </span>y</code></pre>
+<ul>
+<li>Veamos como obtener los elementos de un vector que satisfacen una condición</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x[x &gt;<span class="st"> </span>y]  <span class="co"># elementos de x que son mayores que los corresp. de y</span>
+y[x &gt;<span class="st"> </span>y]  <span class="co"># elementos de y que son menores que los corresp. de x</span></code></pre>
+</div>
+<div id="ejercicio-3" class="slide section level1">
+<h1>Ejercicio 3</h1>
+<ul>
+<li>Tenemos un vector x con los elementos 1,2,..,9,10 que identifican a 10 personas (vamos a simularlo con sample(1:10,10))</li>
+</ul>
+<ul>
+<li>Tenemos otro vector y con el peso de estas 10 personas (vamos a simularlo con rnorm(10,75,10))</li>
+</ul>
+<ul>
+<li>Hallar el peso de las personas con id. menor o igual a 5</li>
+</ul>
+<ul>
+<li>Hallar las personas con peso menor de 74 kg (determinar la persona y su peso).</li>
+</ul>
+</div>
+<div id="estructuras-de-datos.-la-instrucción-data.frame" class="slide section level1">
+<h1>Estructuras de datos. La instrucción data.frame()</h1>
+<ul>
+<li>Un conjunto de datos estándar se representa en R como un data.frame</li>
+<li>Es una estructura similar a <code>matrix</code></li>
+<li>Las filas son las observaciones y las columnas son las variables (numéricas o categóricas)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">datos &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">aula =</span> <span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">3</span>, <span class="dt">each =</span> <span class="dv">2</span>), <span class="dt">sexo =</span> <span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">horas =</span> <span class="kw">rnorm</span>(<span class="dv">6</span>, 
+    <span class="dv">8</span>, <span class="dv">2</span>))
+<span class="kw">dim</span>(datos)  <span class="co"># hay 6 observaciones y 3 variables</span>
+datos</code></pre>
+<ul>
+<li>NOTA: Todas las columnas son de la misma longitud (un data.frame es rectangular, es como una hoja de cálculo)</li>
+</ul>
+<ul>
+<li>Como hemos dicho, un data.frame es similar a una matriz. Por tanto, para acceder a sus elementos lo hacemos de forma parecida.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">datos[<span class="dv">1</span>, ]  <span class="co"># observación 1</span>
+datos[, <span class="dv">2</span>]  <span class="co"># variable 2</span>
+datos[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">1</span>:<span class="dv">2</span>]  <span class="co"># ?</span></code></pre>
+</div>
+<div id="estructuras-de-datos.-la-instrucción-data.frame-ii" class="slide section level1">
+<h1>Estructuras de datos. La instrucción data.frame() (II)</h1>
+<ul>
+<li>A las columnas podemos acceder utilizando su nombre</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">datos[, <span class="st">&quot;sexo&quot;</span>]
+datos[, <span class="kw">c</span>(<span class="st">&quot;aula&quot;</span>, <span class="st">&quot;sexo&quot;</span>)]</code></pre>
+<p>aunque la más habitual es con el operador <code>$</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">datos$sexo  <span class="co"># la columna sexo (como vector de valores)</span>
+datos$sexo[<span class="dv">1</span>:<span class="dv">3</span>]  <span class="co"># los 3 primeros elementos de sexo</span>
+datos$sexo[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>)]  <span class="co"># ?</span></code></pre>
+<ul>
+<li>Podemos hacer operaciones vectoriales con las variables de un data.frame</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>datos$sexo +<span class="st"> </span>datos$horas
+datos$dias &lt;-<span class="st"> </span>datos$horas/<span class="dv">24</span></code></pre>
+</div>
+<div id="filtrar-conjuntos-de-registros-en-un-data.frame" class="slide section level1">
+<h1>Filtrar conjuntos de registros en un data.frame</h1>
+<ul>
+<li>Supongamos que queremos filtrar aquellas filas del dataset 'datos' que verifican una condición determinada (p.e., las filas tales que var1 sea igual a 2 y las filas con var2 igual a 2).</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">datos_filt1 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas del aula 2</span>
+datos_filt1
+<span class="co"># cond&lt;-datos$aula==2 datos_filt1&lt;-datos[cond,] # filas con var1=2</span>
+<span class="co"># datos_filt1</span>
+
+datos_filt2 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, sexo ==<span class="st"> </span><span class="dv">1</span>)  <span class="co"># filas del sexo 1</span>
+datos_filt2
+<span class="co"># cond&lt;-datos$sexo==1 datos_filt2&lt;-datos[cond,] # filas con sexo=1</span>
+<span class="co"># datos_filt2</span></code></pre>
+<ul>
+<li>Si queremos combinar condiciones utilizamos los operadores <code>&amp;</code> (AND) y <code>|</code> (OR). Por ejemplo:</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">datos_filt3 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>sexo ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas con aula=1 y sexo=2</span>
+<span class="co"># cond&lt;-(datos$var1==2 &amp; datos$var2==2) datos_filt3&lt;-datos[cond,] # filas</span>
+<span class="co"># con var1=1 y var2=2 datos_filt3</span>
+
+datos_filt4 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">1</span> |<span class="st"> </span>sexo ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas con aula=1 o sexo=2</span>
+<span class="co"># cond&lt;-(datos$var1==2 | datos$var2==2) datos_filt4&lt;-datos[cond,] # filas</span>
+<span class="co"># con var1=1 ó var2=2 datos_filt4</span></code></pre>
+</div>
+<div id="ejercicio-4" class="slide section level1">
+<h1>Ejercicio 4</h1>
+<pre class="sourceCode r"><code class="sourceCode r">mascotas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">animal =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;gato&quot;</span>, <span class="st">&quot;perro&quot;</span>, <span class="st">&quot;mono&quot;</span>), <span class="dt">each =</span> <span class="dv">2</span>), <span class="dt">sexo =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, 
+    <span class="st">&quot;H&quot;</span>), <span class="dv">3</span>), <span class="dt">peso =</span> <span class="kw">rnorm</span>(<span class="dv">6</span>, <span class="dv">15</span>, <span class="dv">5</span>))</code></pre>
+<ul>
+<li>Filtro por una variable: Filtrar las 'mascotas' de tipo 'gato'. ¿Cuántos animales hay?</li>
+</ul>
+<ul>
+<li>Suma agrupada: Hallar la suma de todos los pesos de cada animal (animal='perro', animal='gato',animal='mono'). ¿Cuál es el máximo de las sumas agrupadas por animal?</li>
+</ul>
+<ul>
+<li>Media de una variable por grupos: Hallar el peso medio de cada animal.</li>
+</ul>
+</div>
+<div id="resúmenes-por-filas-y-columnas" class="slide section level1">
+<h1>Resúmenes por filas y columnas</h1>
+<ul>
+<li>Se pueden sumar los valores de las columnas o las filas con las siguientes instrucciones</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colSums</span>(datos)
+<span class="kw">rowSums</span>(datos)  <span class="co">#sólo funciona si todas las variables son numéricas</span></code></pre>
+<ul>
+<li>Sin embargo, a veces queremos sumar los valores de una variable agrupados de acuerdo a una variable categórica. Por ejemplo, sumar todas las horas para cada aula o cada sexo en 'datos'.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">by</span>(datos[, <span class="st">&quot;horas&quot;</span>], datos[, <span class="st">&quot;aula&quot;</span>], sum)  <span class="co"># suma las horas para cada aula</span>
+<span class="kw">by</span>(datos[, <span class="dv">3</span>], datos[, <span class="dv">1</span>], sum)  <span class="co"># cuidado con esta forma que puede dar lugar a errores</span></code></pre>
+<ul>
+<li>En R puede haber múltiples instrucciones para sumar por grupos.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(horas ~<span class="st"> </span>aula, sum, <span class="dt">data =</span> datos)  <span class="co"># utilizando una fórmula</span></code></pre>
+</div>
+<div id="ejercicio-5" class="slide section level1">
+<h1>Ejercicio 5</h1>
+<ul>
+<li>Suma agrupada: Hallar la suma de todos los pesos de cada animal (animal='perro', animal='gato',animal='mono').</li>
+</ul>
+<ul>
+<li>Media de una variable por grupos: Hallar el peso medio de cada animal.</li>
+</ul>
+</div>
+</body>
+</html>
