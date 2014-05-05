@@ -6,8 +6,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Profesores:  Carlos Pérez González  Marcos Colebrook Santamaría  (curso de Fundación General ULL)" />
-  <title>Curso introductorio de </title>
+  <meta name="author" content="Profesores:  Marcos Colebrook Santamaría  Carlos Pérez González" />
+  <title>Curso de introducción al software estadístico R  </title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -35,25 +35,25 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Curso introductorio de <img src="figure/Rlogo.jpg" /></h1>
+  <h1 class="title">Curso de introducción al software estadístico R </br> <img src="figure/Rlogo.jpg" /></h1>
   <p class="author">
-Profesores: </br> Carlos Pérez González </br> Marcos Colebrook Santamaría </br> (curso de Fundación General ULL)
+Profesores: </br> Marcos Colebrook Santamaría </br> Carlos Pérez González
   </p>
-  <p class="date">2014</p>
+  <p class="date">Área de Estadística e Investigación Operativa - Universidad de La Laguna </br> Curso de Fundación Canaria General, 2014</p>
 </div>
 <div id="bienvenidos-a-r" class="slide section level1">
 <h1>Bienvenidos a R</h1>
-<h2 id="agenda">Agenda</h2>
+<h2 id="contenidos">Contenidos</h2>
 <ol style="list-style-type: decimal">
 <li>Introducción al entorno R: instalación y uso básico. Librerías.</li>
 <li>Conceptos básicos del lenguaje R: instrucciones sencillas, scripts y funciones sencillas.</li>
-<li>Gráficos en R: el comando plot() y librerías específicas.</li>
 <li>Introducción a la interfaz Rstudio.</li>
+<li>Gráficos en R: el comando plot() y librerías específicas.</li>
 <li>Librería RCommander y técnicas de análisis estadístico.</li>
 </ol>
 </div>
 <div id="introducción-al-entorno-r-instalación-y-uso-básico.-librerías." class="slide section level1">
-<h1>Introducción al entorno R: instalación y uso básico. Librerías.</h1>
+<h1><br/><br/><br/><br/>Introducción al entorno R: instalación y uso básico. Librerías.</h1>
 </div>
 <div id="qué-es-r-y-qué-es-lo-que-no-es-i" class="slide section level1">
 <h1>¿Qué es R (y qué es lo que no es)? (I)</h1>
@@ -74,7 +74,7 @@ Profesores: </br> Carlos Pérez González </br> Marcos Colebrook Santamaría </b
 <div id="qué-es-r-y-qué-es-lo-que-no-es-y-ii" class="slide section level1">
 <h1>¿Qué es R (y qué es lo que no es)? (y II)</h1>
 <object data="figure/Rdiagram.svg" type="image/svg+xml" 
-  width="80%" height="80%" title="Indian Office logo"> 
+  width="80%" height="80%" title="Esquema R y librerías"> 
 </object>
 
 
@@ -142,7 +142,7 @@ Profesores: </br> Carlos Pérez González </br> Marcos Colebrook Santamaría </b
 </ul>
 </div>
 <div id="conceptos-básicos-del-lenguaje-r-instrucciones-sencillas-scripts-y-funciones-sencillas." class="slide section level1">
-<h1>Conceptos básicos del lenguaje R: instrucciones sencillas, scripts y funciones sencillas.</h1>
+<h1><br/><br/><br/><br/>Conceptos básicos del lenguaje R: instrucciones sencillas, scripts y funciones sencillas.</h1>
 </div>
 <div id="la-consola-de-r.-operaciones-elementales" class="slide section level1">
 <h1>La consola de R. Operaciones elementales</h1>
@@ -161,6 +161,9 @@ Profesores: </br> Carlos Pérez González </br> Marcos Colebrook Santamaría </b
 <ul>
 <li>Todo en R (variables, vectores, funciones, gráficos, fórmulas, ...) son objetos.</li>
 </ul>
+</div>
+<div id="la-consola-de-r.-operaciones-elementales-ii" class="slide section level1">
+<h1>La consola de R. Operaciones elementales (II)</h1>
 <ul>
 <li>El objeto más elemental es una variable. Para crear una variable (x) debemos asignar un valor (número, palabra, ...) mediante <code>&lt;-</code> or <code>=</code> . Se recomienda <code>&lt;-</code> .</li>
 </ul>
@@ -187,8 +190,14 @@ x[-<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span
 <h1>Ejercicio 1</h1>
 <ul>
 <li>crear un vector x con valores 0, 3, 6, 9, 12, 15, 18</li>
+</ul>
+<ul>
 <li>crear un vector y con las palabras {&quot;mis&quot;,&quot;números&quot;,&quot;favoritos&quot;,&quot;son&quot;}</li>
+</ul>
+<ul>
 <li>crear un vector z con todos los elementos de y los 2 últimos elementos de x</li>
+</ul>
+<ul>
 <li>ejecutar <code>typeof(x)</code>, <code>typeof(y)</code> y <code>typeof(z)</code></li>
 </ul>
 <ul>
@@ -211,7 +220,11 @@ x/<span class="dv">2</span>  <span class="co">#divide por 2 cada elemento del ve
 <ul>
 <li>Observar que estamos utilizando las primeras funciones de R (length, max, min, ...). Si se desea obtener la ayuda en particular de una función debemos escribir <code>?</code> seguido del nombre de la función</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="st">`</span><span class="dt">?</span><span class="st">`</span>(sum)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="st">`</span><span class="dt">?</span><span class="st">`</span>(sum)
+<span class="st">`</span><span class="dt">?</span><span class="st">`</span>(mean)</code></pre>
+</div>
+<div id="vectores-ii" class="slide section level1">
+<h1>Vectores (II)</h1>
 <ul>
 <li>Ahora, veamos como son las operaciones entre vectores</li>
 </ul>
@@ -250,14 +263,16 @@ m1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span
 <li>Algunos ejemplos de operaciones con matrices</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">m1 +<span class="st"> </span>m1
-m1 *<span class="st"> </span>m1  <span class="co"># de nuevo, producto elemento a elemento</span>
-
-m2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span>:<span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">FALSE</span>)
-m1 +<span class="st"> </span>m2  <span class="co"># error</span>
-m1 *<span class="st"> </span>m2  <span class="co"># error</span></code></pre>
+m1 *<span class="st"> </span>m1  <span class="co"># de nuevo, producto elemento a elemento</span></code></pre>
 </div>
 <div id="otras-operaciones-de-interés-con-vectores-y-matrices" class="slide section level1">
 <h1>Otras operaciones de interés con vectores y matrices</h1>
+<ul>
+<li>Al contrario que con los vectores, ciertas operaciones con matrices no son posibles</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">m2 &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span>:<span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">FALSE</span>)
+m1 +<span class="st"> </span>m2  <span class="co"># error</span>
+m1 *<span class="st"> </span>m2  <span class="co"># error</span></code></pre>
 <ul>
 <li>¿Y las operaciones usuales de vectores (producto escalar) y matrices (prod. matricial)? Se utiliza el operador <code>%*%</code></li>
 </ul>
@@ -277,7 +292,11 @@ m1 %*%<span class="st"> </span>m2</code></pre>
 <h1>Ejercicio 2</h1>
 <ul>
 <li>crear una matriz A de 2x2 con la primera fila 2,3 y la segunda 6,7</li>
+</ul>
+<ul>
 <li>crear una matriz b de 2x1 con los elementos 1,5</li>
+</ul>
+<ul>
 <li>resolver la ecuación Ax=b</li>
 </ul>
 </div>
@@ -307,19 +326,26 @@ y[x &gt;<span class="st"> </span>y]  <span class="co"># elementos de y que son m
 <h1>Ejercicio 3</h1>
 <ul>
 <li>Tenemos un vector x con los elementos 1,2,..,9,10 que identifican a 10 personas (vamos a simularlo con sample(1:10,10))</li>
+</ul>
+<ul>
 <li>Tenemos otro vector y con el peso de estas 10 personas (vamos a simularlo con rnorm(10,75,10))</li>
+</ul>
+<ul>
 <li>Hallar el peso de las personas con id. menor o igual a 5</li>
+</ul>
+<ul>
 <li>Hallar las personas con peso menor de 74 kg (determinar la persona y su peso).</li>
 </ul>
 </div>
-<div id="estructuras-de-datos.-la-instrucción-data.frame." class="slide section level1">
-<h1>Estructuras de datos. La instrucción data.frame.</h1>
+<div id="estructuras-de-datos.-la-instrucción-data.frame" class="slide section level1">
+<h1>Estructuras de datos. La instrucción data.frame()</h1>
 <ul>
 <li>Un conjunto de datos estándar se representa en R como un data.frame</li>
 <li>Es una estructura similar a <code>matrix</code></li>
-<li>Cada fila es una observación y cada columna es una variable</li>
+<li>Las filas son las observaciones y las columnas son las variables (numéricas o categóricas)</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">datos &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">var1 =</span> <span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">3</span>, <span class="dt">each =</span> <span class="dv">2</span>), <span class="dt">var2 =</span> <span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">values =</span> <span class="kw">rnorm</span>(<span class="dv">6</span>))
+<pre class="sourceCode r"><code class="sourceCode r">datos &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">aula =</span> <span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">3</span>, <span class="dt">each =</span> <span class="dv">2</span>), <span class="dt">sexo =</span> <span class="kw">rep</span>(<span class="dv">1</span>:<span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">horas =</span> <span class="kw">rnorm</span>(<span class="dv">6</span>, 
+    <span class="dv">8</span>, <span class="dv">2</span>))
 <span class="kw">dim</span>(datos)  <span class="co"># hay 6 observaciones y 3 variables</span>
 datos</code></pre>
 <ul>
@@ -330,60 +356,92 @@ datos</code></pre>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">datos[<span class="dv">1</span>, ]  <span class="co"># observación 1</span>
 datos[, <span class="dv">2</span>]  <span class="co"># variable 2</span>
-datos[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">1</span>:<span class="dv">2</span>]  <span class="co"># observaciones 1 a 3, variables 1 a 2</span></code></pre>
+datos[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">1</span>:<span class="dv">2</span>]  <span class="co"># ?</span></code></pre>
+</div>
+<div id="estructuras-de-datos.-la-instrucción-data.frame-ii" class="slide section level1">
+<h1>Estructuras de datos. La instrucción data.frame() (II)</h1>
 <ul>
 <li>A las columnas podemos acceder utilizando su nombre</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">datos[, <span class="st">&quot;var2&quot;</span>]</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">datos[, <span class="st">&quot;sexo&quot;</span>]
+datos[, <span class="kw">c</span>(<span class="st">&quot;aula&quot;</span>, <span class="st">&quot;sexo&quot;</span>)]</code></pre>
 <p>aunque la más habitual es con el operador <code>$</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r">datos$var2  <span class="co"># la columna var2 (como vector de valores)</span>
-datos$var2[<span class="dv">1</span>:<span class="dv">3</span>]  <span class="co"># los 3 primeros elementos de var2</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">datos$sexo  <span class="co"># la columna sexo (como vector de valores)</span>
+datos$sexo[<span class="dv">1</span>:<span class="dv">3</span>]  <span class="co"># los 3 primeros elementos de sexo</span>
+datos$sexo[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">6</span>)]  <span class="co"># ?</span></code></pre>
 <ul>
 <li>Podemos hacer operaciones vectoriales con las variables de un data.frame</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>datos$var2 +<span class="st"> </span>datos$values
-datos$var3 &lt;-<span class="st"> </span>datos$var2 +<span class="st"> </span>datos$values</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span>datos$sexo +<span class="st"> </span>datos$horas
+datos$dias &lt;-<span class="st"> </span>datos$horas/<span class="dv">24</span></code></pre>
 </div>
 <div id="filtrar-conjuntos-de-registros-en-un-data.frame" class="slide section level1">
 <h1>Filtrar conjuntos de registros en un data.frame</h1>
 <ul>
 <li>Supongamos que queremos filtrar aquellas filas del dataset 'datos' que verifican una condición determinada (p.e., las filas tales que var1 sea igual a 2 y las filas con var2 igual a 2).</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">cond &lt;-<span class="st"> </span>datos$var1 ==<span class="st"> </span><span class="dv">2</span>
-datos_filt1 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas con var1=2</span>
+<pre class="sourceCode r"><code class="sourceCode r">datos_filt1 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas del aula 2</span>
 datos_filt1
+<span class="co"># cond&lt;-datos$aula==2 datos_filt1&lt;-datos[cond,] # filas con var1=2</span>
+<span class="co"># datos_filt1</span>
 
-cond &lt;-<span class="st"> </span>datos$var2 ==<span class="st"> </span><span class="dv">2</span>
-datos_filt2 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas con var2=2</span>
-datos_filt2</code></pre>
+datos_filt2 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, sexo ==<span class="st"> </span><span class="dv">1</span>)  <span class="co"># filas del sexo 1</span>
+datos_filt2
+<span class="co"># cond&lt;-datos$sexo==1 datos_filt2&lt;-datos[cond,] # filas con sexo=1</span>
+<span class="co"># datos_filt2</span></code></pre>
 <ul>
 <li>Si queremos combinar condiciones utilizamos los operadores <code>&amp;</code> (AND) y <code>|</code> (OR). Por ejemplo:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">cond &lt;-<span class="st"> </span>(datos$var1 ==<span class="st"> </span><span class="dv">2</span> &amp;<span class="st"> </span>datos$var2 ==<span class="st"> </span><span class="dv">2</span>)
-datos_filt3 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas con var1=1 y var2=2</span>
-datos_filt3
+<pre class="sourceCode r"><code class="sourceCode r">datos_filt3 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>sexo ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas con aula=1 y sexo=2</span>
+<span class="co"># cond&lt;-(datos$var1==2 &amp; datos$var2==2) datos_filt3&lt;-datos[cond,] # filas</span>
+<span class="co"># con var1=1 y var2=2 datos_filt3</span>
 
-cond &lt;-<span class="st"> </span>(datos$var1 ==<span class="st"> </span><span class="dv">2</span> |<span class="st"> </span>datos$var2 ==<span class="st"> </span><span class="dv">2</span>)
-datos_filt4 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas con var1=1 ó var2=2</span>
-datos_filt4</code></pre>
+datos_filt4 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">1</span> |<span class="st"> </span>sexo ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas con aula=1 o sexo=2</span>
+<span class="co"># cond&lt;-(datos$var1==2 | datos$var2==2) datos_filt4&lt;-datos[cond,] # filas</span>
+<span class="co"># con var1=1 ó var2=2 datos_filt4</span></code></pre>
 </div>
 <div id="ejercicio-4" class="slide section level1">
 <h1>Ejercicio 4</h1>
-<pre class="sourceCode r"><code class="sourceCode r">mascotas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
-<span class="dt">animal=</span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;gato&quot;</span>,<span class="st">&quot;perro&quot;</span>,<span class="st">&quot;mono&quot;</span>),<span class="dt">each=</span><span class="dv">2</span>), 
-<span class="dt">sexo=</span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>,<span class="st">&quot;H&quot;</span>),<span class="dv">3</span>),
-<span class="dt">peso=</span><span class="kw">rnorm</span>(<span class="dv">6</span>,<span class="dv">15</span>,<span class="dv">5</span>)
-)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">mascotas &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">animal =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;gato&quot;</span>, <span class="st">&quot;perro&quot;</span>, <span class="st">&quot;mono&quot;</span>), <span class="dt">each =</span> <span class="dv">2</span>), <span class="dt">sexo =</span> <span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, 
+    <span class="st">&quot;H&quot;</span>), <span class="dv">3</span>), <span class="dt">peso =</span> <span class="kw">rnorm</span>(<span class="dv">6</span>, <span class="dv">15</span>, <span class="dv">5</span>))</code></pre>
 <ul>
 <li>Filtro por una variable: Filtrar las 'mascotas' de tipo 'gato'. ¿Cuántos animales hay?</li>
+</ul>
+<ul>
 <li>Suma agrupada: Hallar la suma de todos los pesos de cada animal (animal='perro', animal='gato',animal='mono'). ¿Cuál es el máximo de las sumas agrupadas por animal?</li>
 </ul>
 <ul>
 <li>Media de una variable por grupos: Hallar el peso medio de cada animal.</li>
 </ul>
 </div>
+<div id="resúmenes-por-filas-y-columnas" class="slide section level1">
+<h1>Resúmenes por filas y columnas</h1>
+<ul>
+<li>Se pueden sumar los valores de las columnas o las filas con las siguientes instrucciones</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colSums</span>(datos)
+<span class="kw">rowSums</span>(datos)  <span class="co">#sólo funciona si todas las variables son numéricas</span></code></pre>
+<ul>
+<li>Sin embargo, a veces queremos sumar los valores de una variable agrupados de acuerdo a una variable categórica. Por ejemplo, sumar todas las horas para cada aula o cada sexo en 'datos'.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">by</span>(datos[, <span class="st">&quot;horas&quot;</span>], datos[, <span class="st">&quot;aula&quot;</span>], sum)  <span class="co"># suma las horas para cada aula</span>
+<span class="kw">by</span>(datos[, <span class="dv">3</span>], datos[, <span class="dv">1</span>], sum)  <span class="co"># cuidado con esta forma que puede dar lugar a errores</span></code></pre>
+<ul>
+<li>En R puede haber múltiples instrucciones para sumar por grupos.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(horas ~<span class="st"> </span>aula, sum, <span class="dt">data =</span> datos)  <span class="co"># utilizando una fórmula</span></code></pre>
+</div>
+<div id="ejercicio-5" class="slide section level1">
+<h1>Ejercicio 5</h1>
+<ul>
+<li>Suma agrupada: Hallar la suma de todos los pesos de cada animal (animal='perro', animal='gato',animal='mono').</li>
+</ul>
+<ul>
+<li>Media de una variable por grupos: Hallar el peso medio de cada animal.</li>
+</ul>
+</div>
 <div id="librería-rcommander-y-técnicas-de-análisis-estadístico." class="slide section level1">
-<h1>Librería RCommander y técnicas de análisis estadístico.</h1>
+<h1><br/><br/><br/><br/>Librería RCommander y técnicas de análisis estadístico.</h1>
 </div>
 <div id="qué-es-rcommander" class="slide section level1">
 <h1>¿Qué es RCommander?</h1>
@@ -444,7 +502,7 @@ datos_filt4</code></pre>
 <div id="distribuciones-de-probabilidad" class="slide section level1">
 <h1>Distribuciones de probabilidad</h1>
 <ul>
-<li>El menú Distribuciones de probabilidad dispone de diversas funciones para estudiar diferentes tipos de distribuciones. En particular
+<li>El menú 'Distribuciones' dispone de diversas funciones para estudiar diferentes tipos de distribuciones. En particular
 <ul>
 <li>Se pueden obtener los cuantiles teóricos para una distribución (por ejemplo, para hallar cual es el valor crítico <span class="math"><em>z</em><sub><em>α</em> / 2</sub></span> de una normal)</li>
 <li>Se pueden obtener las probabilidades <span class="math"><em>P</em><em>r</em>(<em>Z</em> &lt; <em>z</em>)</span></li>
@@ -453,8 +511,23 @@ datos_filt4</code></pre>
 </ul></li>
 </ul>
 </div>
-<div id="importar-conjuntos-de-datos" class="slide section level1">
-<h1>Importar conjuntos de datos</h1>
+<div id="ejercicio-5-1" class="slide section level1">
+<h1>Ejercicio 5</h1>
+<ul>
+<li>Cuantiles teóricos: Obtener un vector <code>y</code> con los cuantiles 25%,50%,75%,100% de la normal de media 0 y sd. 1.</li>
+</ul>
+<ul>
+<li>Obtener una muestra de 100 valores aleatorios de una uniforme entre 0 y 1.</li>
+</ul>
+<ul>
+<li>Cuantiles muestrales: Obtener un vector <code>x</code> con los cuantiles 25%,50%,75%,100% de la muestra (se utiliza la función <code>quantile()</code>).</li>
+</ul>
+<ul>
+<li>Hacer un <code>plot(x,y); abline(0,1)</code></li>
+</ul>
+</div>
+<div id="importar-conjuntos-de-datos-i" class="slide section level1">
+<h1>Importar conjuntos de datos (I)</h1>
 <ul>
 <li>El menú Datos nos permite importar conjuntos de datos desde varios formatos (txt, SPSS, Excel, ...). Vamos a cargar el conjunto de datos 'ddt.txt':
 <ul>
@@ -468,6 +541,13 @@ datos_filt4</code></pre>
 <li>DDT_conc: Concentración de DDT (% de peso) medida</li>
 </ul></li>
 </ul>
+<ul>
+<li>Se puede descargar el archivo en local y luego importarlo pero también existe la posbilidad de leer directamente desde internet</li>
+</ul>
+<pre><code>  * http://dl.dropboxusercontent.com/u/17677514/ddt.txt</code></pre>
+</div>
+<div id="importar-conjuntos-de-datos-ii" class="slide section level1">
+<h1>Importar conjuntos de datos (II)</h1>
 <ul>
 <li>La opción 'Conjunto de datos activo' permite:
 <ul>
@@ -525,7 +605,7 @@ datos_filt4</code></pre>
 </ul></li>
 </ul>
 </div>
-<div id="ejercicio-5" class="slide section level1">
+<div id="ejercicio-5-2" class="slide section level1">
 <h1>Ejercicio 5</h1>
 <ul>
 <li>Realizar un resumen descriptivo de 'DDT_conc' para cada uno de los 2 grupos de observaciones.</li>
@@ -539,6 +619,99 @@ datos_filt4</code></pre>
 <ul>
 <li>PISTA: La variable 'group' ha sido cargada en R como variable numérica y debería ser un factor.</li>
 </ul>
+<ul>
+<li>Realizar un histograma comparativo del 'DDT_conc' del grupo 1 con el grupo 2</li>
+</ul>
+</div>
+<div id="nivel-avanzado-gráficos-más-complejos" class="slide section level1">
+<h1>Nivel avanzado: Gráficos más complejos</h1>
+<ul>
+<li>Se puede hacer un gráfico histograma combinado con diagrama de cajas y añadir una curva de densidad normal</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(devtools)
+<span class="kw">source_gist</span>(<span class="st">&quot;1e7ee71e79346ffdd5a5&quot;</span>)
+<span class="kw">plotHistBox</span>(ddt$length)</code></pre>
+<p><img src="figure/plot6a1.png" /> <img src="figure/plot6a2.png" /></p>
+</div>
+<div id="nivel-avanzado-gráficos-más-complejos-1" class="slide section level1">
+<h1>Nivel avanzado: Gráficos más complejos</h1>
+<ul>
+<li>Los gráficos histogramas también se pueden combinar</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">h1 &lt;-<span class="st"> </span><span class="kw">hist</span>(ddt$weight, <span class="dt">col =</span> <span class="st">&quot;grey60&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Histograma de weight&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;weight&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))
+<span class="kw">with</span>(ddt, <span class="kw">hist</span>(weight[species ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">breaks =</span> h1$breaks, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Histograma de weight&quot;</span>, 
+    <span class="dt">xlab =</span> <span class="st">&quot;weight&quot;</span>))
+<span class="kw">with</span>(ddt, <span class="kw">hist</span>(weight[species ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">breaks =</span> h1$breaks, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>))
+
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">sort</span>(<span class="kw">levels</span>(ddt$species_name), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">fill =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, 
+    <span class="st">&quot;red&quot;</span>))</code></pre>
+<div class="figure">
+<img src="figure/plot6b.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los gráficos de cajas y bigotes</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(ddt$DDT_conc, <span class="dt">main =</span> <span class="st">&quot;Diagrama box-and-whisker de DDT_conc&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>)</code></pre>
+<div class="figure">
+<img src="figure/plot7a.png" />
+</div>
+<ul>
+<li>Los gráficos de comparación de cuantiles (qq-plot)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qqnorm</span>(ddt$DDT_conc, <span class="dt">main =</span> <span class="st">&quot;Q-q plot de DDT_conc&quot;</span>)
+<span class="kw">qqline</span>(ddt$DDT_conc, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)</code></pre>
+<div class="figure">
+<img src="figure/plot7b.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-1" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los gráficos 'Diagrama de dispersión' permiten representar 2 variables y añadir la información de un grupo.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(lattice)
+<span class="kw">scatterplot</span>(length ~<span class="st"> </span>weight |<span class="st"> </span>group, <span class="dt">reg.line =</span> lm, <span class="dt">smooth =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">spread =</span> <span class="ot">FALSE</span>, <span class="dt">boxplots =</span> <span class="ot">FALSE</span>, <span class="dt">span =</span> <span class="fl">0.5</span>, <span class="dt">by.groups =</span> <span class="ot">TRUE</span>, 
+    <span class="dt">reset.par =</span> <span class="ot">FALSE</span>, <span class="dt">data =</span> ddt)</code></pre>
+<p><img src="figure/plot8a1.png" /> <img src="figure/plot8a2.png" /></p>
+</div>
+<div id="otros-gráficos-en-rcmdr-2" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Otro gráfico de 2 variables es 'Gráfica XY'</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(lattice)
+<span class="kw">xyplot</span>(length ~<span class="st"> </span>weight, <span class="dt">groups =</span> group, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>, 
+    <span class="dt">auto.key =</span> <span class="kw">list</span>(<span class="dt">border =</span> <span class="ot">TRUE</span>), <span class="dt">data =</span> ddt)</code></pre>
+<div class="figure">
+<img src="figure/plot8b.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-3" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los gráficos 'Matriz de diagrama de dispersión' permiten visualizar múltiples variables</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scatterplotMatrix</span>(~DDT_conc +<span class="st"> </span>length +<span class="st"> </span>weight, <span class="dt">reg.line =</span> lm, <span class="dt">smooth =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">spread =</span> <span class="ot">FALSE</span>, <span class="dt">span =</span> <span class="fl">0.5</span>, <span class="dt">id.n =</span> <span class="dv">0</span>, <span class="dt">diagonal =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">data =</span> ddt)</code></pre>
+<div class="figure">
+<img src="figure/plot9.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-4" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los 'Gráficos de medias' son muy útiles en ANOVAs</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(Rcmdr)
+<span class="kw">plotMeans</span>(ddt$DDT_conc, ddt$species_name, <span class="dt">error.bars =</span> <span class="st">&quot;conf.int&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
+<div class="figure">
+<img src="figure/plot10.png" />
+</div>
 </div>
 <div id="tests-de-medias-y-de-varianzas" class="slide section level1">
 <h1>Tests de medias y de varianzas</h1>
@@ -560,14 +733,26 @@ datos_filt4</code></pre>
 </ul></li>
 </ul>
 </div>
+<div id="esquema-de-aplicación-de-test-de-comparación-de-medias" class="slide section level1">
+<h1>Esquema de aplicación de test de comparación de medias</h1>
+<object data="figure/test_flowchart.svg" type="image/svg+xml" 
+  width="100%" height="80%" title="Esquema de t-test"> 
+</object>
+
+
+</div>
+<div id="esquema-de-aplicación-de-test-de-comparación-de-medias-medidas-repetidas" class="slide section level1">
+<h1>Esquema de aplicación de test de comparación de medias (medidas repetidas)</h1>
+<object data="figure/test2_flowchart.svg" type="image/svg+xml" 
+  width="100%" height="80%" title="Esquema de t-test"> 
+</object>
+
+</div>
 <div id="ejercicio-6" class="slide section level1">
 <h1>Ejercicio 6</h1>
 <p>Comparar el peso de los peces del grupo 1 con el peso de los del grupo 2.</p>
 <ul>
-<li>1º PASO:
-<ul>
-<li>¿Se asume normalidad de la variable peso?</li>
-</ul></li>
+<li>1º PASO: ¿Se asume normalidad de la variable peso?</li>
 </ul>
 <div class="figure">
 <img src="figure/plot1.png" />
@@ -578,12 +763,13 @@ datos_filt4</code></pre>
 ## 
 ## data:  ddt$weight
 ## W = 0.9727, p-value = 0.009211</code></pre>
-<p>Si hay dudas en la normalidad, el t-test no se puede aplicar (¿¿??)</p>
+<p>Si hay dudas en la normalidad, el t-test no se puede aplicar y hay que acudir a alternativas no paramétricas.</p>
+</div>
+<div id="ejercicio-6-1" class="slide section level1">
+<h1>Ejercicio 6</h1>
+<p>Comparar el peso de los peces del grupo 1 con el peso de los del grupo 2.</p>
 <ul>
-<li>2º PASO:
-<ul>
-<li>¿Se asume igualdad de varianzas de peso entre los grupos?<br /><img src="figure/plot2.png" /></li>
-</ul></li>
+<li>2º PASO: ¿Se asume igualdad de varianzas de peso entre los grupos?<br /><img src="figure/plot2.png" /></li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bartlett.test</span>(weight ~<span class="st"> </span>group, <span class="dt">data =</span> ddt)</code></pre>
 <pre><code>## 
@@ -609,19 +795,29 @@ datos_filt4</code></pre>
 <div id="modelos-estadísticos-anova" class="slide section level1">
 <h1>Modelos estadísticos: ANOVA</h1>
 <ul>
-<li>La opción 'Medias' permite realizar el análisis de varianza de uno o varios factores para comparar las medias de grupos (similar al t-test pero con 2 o más niveles en las variables factor)</li>
+<li>La opción 'Medias' permite realizar el análisis de varianza de uno o varios factores para comparar las medias de grupos (similar al t-test pero con 2 o más niveles en las variables factor).</li>
+</ul>
+<ul>
+<li>La opción 'Tests no paramétricos', con los “test de Kruskal-Wallis” y el “test de Friedman”, son pruebas no paramétricas alternativas al ANOVA.</li>
 </ul>
 <ul>
 <li>Junto a la 'Gráfica de las medias' permite llevar a cabo un análisis comparativo de los efectos de los factores y sus interacciones en un modelo.</li>
 </ul>
+</div>
+<div id="esquema-de-aplicación-de-test-anova" class="slide section level1">
+<h1>Esquema de aplicación de test ANOVA</h1>
+<object data="figure/anova_flowchart.svg" type="image/svg+xml" 
+  width="100%" height="80%" title="Esquema de ANOVA"> 
+</object>
+
+</div>
+<div id="ejercicio-7" class="slide section level1">
+<h1>Ejercicio 7</h1>
 <ul>
 <li>EJEMPLO: Analizar las diferencias en el peso de los peces entre las diferentes localizaciones.</li>
 </ul>
 <ul>
-<li>1º PASO:
-<ul>
-<li>¿Hay diferencias entre todos los niveles (especies)?</li>
-</ul></li>
+<li>1º PASO: ¿Hay diferencias entre todos los niveles (especies)?</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Comprobamos si la varianza es constante</span>
 <span class="kw">bartlett.test</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)</code></pre>
@@ -645,11 +841,14 @@ anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<sp
 ## 
 ## data:  weight by location_name
 ## Kruskal-Wallis chi-squared = 4.021, df = 2, p-value = 0.1339</code></pre>
+</div>
+<div id="ejercicio-7-1" class="slide section level1">
+<h1>Ejercicio 7</h1>
 <ul>
-<li>2º PASO:
+<li>EJEMPLO: Analizar las diferencias en el peso de los peces entre las diferentes localizaciones.</li>
+</ul>
 <ul>
-<li>¿Cómo son las diferencias 2 a 2? (sólo si hay más de 2 niveles en el factor)</li>
-</ul></li>
+<li>2º PASO: ¿Cómo son las diferencias 2 a 2? (sólo si hay más de 2 niveles en el factor)</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)
 <span class="kw">summary</span>(<span class="kw">glht</span>(anova.mod1, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">location_name =</span> <span class="st">&quot;Tukey&quot;</span>)))  <span class="co"># pairwise tests</span></code></pre>
@@ -684,37 +883,105 @@ anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<sp
 </div>
 <div id="modelos-estadísticos-regresión" class="slide section level1">
 <h1>Modelos estadísticos: Regresión</h1>
-</div>
-<div id="ecuaciones" class="slide section level1">
-<h1>Ecuaciones</h1>
 <ul>
-<li>Veamos como se resuelve una ecuación en R <br /><span class="math"><em>p</em>(<em>x</em>) = <em>c</em>[1] + <em>c</em>[2] * <em>x</em> + . . .  + <em>c</em>[<em>n</em> + 1] * <em>x</em><sup><em>n</em></sup></span><br /></li>
+<li>La opción 'Ajuste de modelos' dispone de múltiples posibilidades para la creación de modelos estadísticos.</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># p(x)=-6-x+x^2</span>
-coef &lt;-<span class="st"> </span><span class="kw">c</span>(-<span class="dv">6</span>, -<span class="dv">1</span>, <span class="dv">1</span>)
-<span class="kw">polyroot</span>(coef)
-
-<span class="co"># p(x)=-2+x+x^2</span>
-coef &lt;-<span class="st"> </span><span class="kw">c</span>(-<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)
-<span class="kw">polyroot</span>(coef)</code></pre>
-</div>
-<div id="la-curva-de-aprendizaje-de-r" class="slide section level1">
-<h1>La curva de aprendizaje de R</h1>
 <ul>
-<li>is steep.</li>
-<li>However, community support is outstanding.</li>
-<li>R has a very large and active user community</li>
-<li>googling your question almost always returns something useful
-<ul>
-<li>get familiar with <a href="http://www.stackoverflow.com">stackoverflow</a></li>
-</ul></li>
-<li>If you know other software, switching is easy:
-<ul>
-<li><a href="http://dss.princeton.edu/training/RStata.pdf">R for Stata Users</a></li>
-<li><a href="http://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf">R for Matlab Users</a></li>
-</ul></li>
-<li>So: Let's get started.</li>
+<li>Además, en la opción 'Modelos' se pueden llevar a cabo muchos análisis habituales en el estudio de los mismos.</li>
 </ul>
+<ul>
+<li>En particular, veamos como determinar un modelo de regresión para estudiar la relación entre la longitud y el peso de los peces.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">regmod<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(weight ~<span class="st"> </span>length, <span class="dt">data =</span> ddt)
+<span class="kw">summary</span>(regmod<span class="fl">.1</span>)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = weight ~ length, data = ddt)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1034.0  -203.6   -58.8   179.3   870.5 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -886.11     229.73   -3.86  0.00018 ***
+## length         44.57       5.16    8.64  1.7e-14 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 286 on 130 degrees of freedom
+## Multiple R-squared:  0.365,  Adjusted R-squared:  0.36 
+## F-statistic: 74.7 on 1 and 130 DF,  p-value: 1.73e-14</code></pre>
+</div>
+<div id="análisis-de-modelos" class="slide section level1">
+<h1>Análisis de modelos</h1>
+<ul>
+<li>Podemos obtener la correlación de las variables de interés en 'Estadísticos-&gt;Resúmenes'.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(ddt[, <span class="kw">c</span>(<span class="st">&quot;length&quot;</span>, <span class="st">&quot;weight&quot;</span>)], <span class="dt">use =</span> <span class="st">&quot;complete&quot;</span>)</code></pre>
+<pre><code>##        length weight
+## length 1.0000 0.6041
+## weight 0.6041 1.0000</code></pre>
+<ul>
+<li>La representación gráfica de un modelo simple es posible en 'Gráficas-&gt;Diagrama de dispersión' seleccionando la opción de mínimos cuadrados. Pero se puede hacer también con <code>plot()</code> y <code>abline()</code></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(ddt$length, ddt$weight, <span class="dt">main =</span> <span class="st">&quot;Weight vs. length&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;lenght&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;weight&quot;</span>, 
+    <span class="dt">pch =</span> <span class="dv">20</span>)
+<span class="kw">abline</span>(regmod<span class="fl">.1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)</code></pre>
+<div class="figure">
+<img src="figure/plot5.png" />
+</div>
+</div>
+<div id="análisis-de-modelos-1" class="slide section level1">
+<h1>Análisis de modelos</h1>
+<ul>
+<li>Con el menú 'Modelos-&gt;Gráficas-&gt;Gráficas básicas de diagnóstico' se pueden obtener una serie de gráficos útiles para el diagnóstico de las hipótesis habituales (homocedasticidad, normalidad, observaciones atípicas)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))
+<span class="kw">plot</span>(regmod<span class="fl">.1</span>)</code></pre>
+<div class="figure">
+<img src="figure/plot6.png" />
+</div>
+</div>
+<div id="ejercicio-8" class="slide section level1">
+<h1>Ejercicio 8</h1>
+<ul>
+<li>Parece que el modelo <span class="math"><em>w</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em> = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub><em>l</em><em>e</em><em>n</em><em>g</em><em>t</em><em>h</em> + <em>ε</em></span> presenta problemas.</li>
+</ul>
+<ul>
+<li>SUGERENCIA: Transformar variables <span class="math"><em>l</em><em>e</em><em>n</em><em>g</em><em>t</em><em>h</em> ⇒ <em>l</em><em>e</em><em>n</em><em>g</em><em>t</em><em>h</em><sup>3</sup></span> y <span class="math"><em>w</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em> ⇒ <em>s</em><em>q</em><em>r</em><em>t</em>(<em>w</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em>)</span> y volver a hacer el ajuste.</li>
+</ul>
+<ul>
+<li>En Rcmdr se encuentran disponibles otros análisis útiles en regresión (Breusch-Pagan para la homocedasticidad, Durbin-Watson para la independencia).</li>
+</ul>
+</div>
+<div id="nivel-avanzado-intervalos-de-confianza-y-predicción-de-la-regresión" class="slide section level1">
+<h1>Nivel avanzado: Intervalos de confianza y predicción de la regresión</h1>
+<ul>
+<li>Para los modelos lineales simples, se pueden representar los intervalos de confianza y predición de la recta</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">ddt$length<span class="fl">.3</span> &lt;-<span class="st"> </span>ddt$length^<span class="dv">3</span>
+ddt$sqrt.weight &lt;-<span class="st"> </span><span class="kw">sqrt</span>(ddt$weight)
+<span class="kw">source_gist</span>(<span class="st">&quot;f9b06d411675c1702ccc&quot;</span>)
+<span class="kw">plotConf</span>(sqrt.weight ~<span class="st"> </span>length<span class="fl">.3</span>, ddt)</code></pre>
+<div class="figure">
+<img src="figure/plot11.png" />
+</div>
+</div>
+<div id="modelos-estadísticos-clustering" class="slide section level1">
+<h1>Modelos estadísticos: Clustering</h1>
+<ul>
+<li>La opción 'Análisis dimensional-&gt;Análisis de agrupación' permite aplicar técnicas de cluster.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(devtools)
+<span class="kw">source_gist</span>(<span class="st">&quot;a4b2ed204d01bc12d952&quot;</span>)
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">plotCluster</span>(<span class="dv">1</span>, ddt[, <span class="kw">c</span>(<span class="st">&quot;length&quot;</span>, <span class="st">&quot;weight&quot;</span>, <span class="st">&quot;DDT_conc&quot;</span>)], ddt$species_name)
+<span class="kw">plotCluster</span>(<span class="dv">2</span>, ddt[, <span class="kw">c</span>(<span class="st">&quot;length&quot;</span>, <span class="st">&quot;weight&quot;</span>, <span class="st">&quot;DDT_conc&quot;</span>)], ddt$species_name)</code></pre>
+<div class="figure">
+<img src="figure/plot12.png" />
+</div>
 </div>
 </body>
 </html>
