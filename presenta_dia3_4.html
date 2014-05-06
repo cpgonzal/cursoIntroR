@@ -452,8 +452,6 @@ anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<sp
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)
 <span class="kw">summary</span>(<span class="kw">glht</span>(anova.mod1, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">location_name =</span> <span class="st">&quot;Tukey&quot;</span>)))  <span class="co"># pairwise tests</span></code></pre>
-<pre><code>## Error: could not find function &quot;glht&quot;</code></pre>
-<pre><code>## Error: could not find function &quot;glht&quot;</code></pre>
 <div class="figure">
 <img src="assets/fig/plot3.png" />
 </div>
