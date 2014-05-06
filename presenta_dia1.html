@@ -385,12 +385,16 @@ datos_filt2
 <li>Si queremos combinar condiciones utilizamos los operadores <code>&amp;</code> (AND) y <code>|</code> (OR). Por ejemplo:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">datos_filt3 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>sexo ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas con aula=1 y sexo=2</span>
-<span class="co"># cond&lt;-(datos$var1==2 &amp; datos$var2==2) datos_filt3&lt;-datos[cond,] # filas</span>
-<span class="co"># con var1=1 y var2=2 datos_filt3</span>
+<span class="co"># Otra forma:</span>
+cond &lt;-<span class="st"> </span>(datos$aula ==<span class="st"> </span><span class="dv">1</span> &amp;<span class="st"> </span>datos$sexo ==<span class="st"> </span><span class="dv">2</span>)
+datos_filt3 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas con aula=1 y sexo=2</span>
+
 
 datos_filt4 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">1</span> |<span class="st"> </span>sexo ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas con aula=1 o sexo=2</span>
-<span class="co"># cond&lt;-(datos$var1==2 | datos$var2==2) datos_filt4&lt;-datos[cond,] # filas</span>
-<span class="co"># con var1=1 ó var2=2 datos_filt4</span></code></pre>
+<span class="co"># Otra forma:</span>
+cond &lt;-<span class="st"> </span>(datos$aula ==<span class="st"> </span><span class="dv">1</span> |<span class="st"> </span>datos$sexo ==<span class="st"> </span><span class="dv">2</span>)
+datos_filt4 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas con aula=1 o sexo=2</span>
+datos_filt4</code></pre>
 </div>
 <div id="ejercicio-4" class="slide section level1">
 <h1>Ejercicio 4</h1>
