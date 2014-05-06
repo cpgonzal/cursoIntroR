@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide section level1">
+
+<p><br/><br/><br/><br/>Librería RCommander y técnicas de análisis estadístico. ========================= # ¿Qué es RCommander?</p>
+<ul>
+<li>Es una interfaz gráfica de usuario (GUI)</li>
+</ul>
+<ul>
+<li>Facilita el manejo de R y permite generar instrucciones de R</li>
+</ul>
+<ul>
+<li>Incluye la posibilidad de realizar distintos tipos de análisis (análisis exploratorio, distribuciones de probabilidad, inferencia paramétrica y no paramétrica, análisis de la varianza de uno o varios factores,....)</li>
+</ul>
+<ul>
+<li>Es una librería que no está incluida en la instalación base de R</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;Rcmdr&quot;</span>)</code></pre>
+<ul>
+<li>Una vez instalada, sólo hace falta iniciarla en cada nueva sessión de R de la siguiente forma</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(Rcmdr)  <span class="co"># tarda un poco puesto que conviene instalar las librerías adicionales que solicita</span></code></pre>
+<ul>
+<li>Si se cierra R-Commander (Rcmdr) pero no la sesión de R, se vuelve a cargar</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">Commander</span>()</code></pre>
+</div>
+<div id="aspecto-de-la-interfaz-de-r-commander" class="slide section level1">
+<h1>Aspecto de la interfaz de R Commander</h1>
+<ul>
+<li>La interfaz de R commander tiene varias partes principales
+<ul>
+<li>En la parte superior se presentan una serie de opciones de menú (Fichero, Editar, ...)</li>
+<li>A continuación, hay dos ventanas principales:
+<ul>
+<li>R Script, donde aparecen todas las instrucciones que se generarán cuando seleccionemos opciones del menú superior.</li>
+<li>Salida, donde se presenta en formato texto el resultado de la ejecución de las diferentes opciones del menú</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="directorio-de-trabajo-scripts-resultados-y-workspace-de-r" class="slide section level1">
+<h1>Directorio de trabajo, scripts, resultados y workspace de R</h1>
+<ul>
+<li>El menú 'Fichero' sirve para gestionar las instrucciones a ejecutar, los objetos creados en R, los resultados generados, etc... pero NO permite cargar conjuntos de datos para el análisis.
+<ul>
+<li>El directorio de trabajo representa el directorio local donde queremos trabajar (donde estan los archivos a cargar, donde queremos guardar los scripts, ...)</li>
+<li>Las instrucciones de la ventan R Script (cargarlas o guardarlas)</li>
+<li>Los resultados de la ventana Salida (guardar)</li>
+<li>El entorno de trabajo (workspace) con todas las variables que tenemos creadas</li>
+</ul></li>
+</ul>
+<ul>
+<li>En principio, las opciones más importantes de este menú sería 'Cambiar directorio de trabajo' (al comenzar a utilizar Rcmdr) y 'Guardar las instrucciones' (al finalizar nuestra sesión de Rcmdr).</li>
+</ul>
+<ul>
+<li>En cualquier caso, al cerrar Rcmdr también nos preguntará si queremos guardar el script y el espacio de trabajo.</li>
+</ul>
+</div>
+<div id="distribuciones-de-probabilidad" class="slide section level1">
+<h1>Distribuciones de probabilidad</h1>
+<ul>
+<li>El menú 'Distribuciones' dispone de diversas funciones para estudiar diferentes tipos de distribuciones. En particular
+<ul>
+<li>Se pueden obtener los cuantiles teóricos para una distribución (por ejemplo, para hallar cual es el valor crítico <span class="math"><em>z</em><sub><em>α</em> / 2</sub></span> de una normal)</li>
+<li>Se pueden obtener las probabilidades <span class="math"><em>P</em><em>r</em>(<em>Z</em> &lt; <em>z</em>)</span></li>
+<li>Representar las funciones de densidad y de probabilidad</li>
+<li>Generar una muestra simulada para una distribución determinada</li>
+</ul></li>
+</ul>
+</div>
+<div id="ejercicio-5" class="slide section level1">
+<h1>Ejercicio 5</h1>
+<ul>
+<li>Cuantiles teóricos: Obtener un vector <code>y</code> con los cuantiles 25%,50%,75%,100% de la normal de media 0 y sd. 1.</li>
+</ul>
+<ul>
+<li>Obtener una muestra de 100 valores aleatorios de una uniforme entre 0 y 1.</li>
+</ul>
+<ul>
+<li>Cuantiles muestrales: Obtener un vector <code>x</code> con los cuantiles 25%,50%,75%,100% de la muestra (se utiliza la función <code>quantile()</code>).</li>
+</ul>
+<ul>
+<li>Hacer un <code>plot(x,y); abline(0,1)</code></li>
+</ul>
+</div>
+<div id="importar-conjuntos-de-datos-i" class="slide section level1">
+<h1>Importar conjuntos de datos (I)</h1>
+<ul>
+<li>El menú Datos nos permite importar conjuntos de datos desde varios formatos (txt, SPSS, Excel, ...). Vamos a cargar el conjunto de datos 'ddt.txt':
+<ul>
+<li>group: Grupo de observaciones (mediciones en dos temporadas)</li>
+<li>location: Código del lugar de captura (de 1 a 3)</li>
+<li>location_name: Nombre del lugar (afluente, medio, desembocadura)</li>
+<li>species: Código de especie (de 1 a 2)</li>
+<li>species_name: Nombre de la especie del pez (buffalo, catfish)</li>
+<li>length: Longitud del pez(en cm.)</li>
+<li>weight: Peso pez (en grs.)</li>
+<li>DDT_conc: Concentración de DDT (% de peso) medida</li>
+</ul></li>
+</ul>
+<ul>
+<li>Se puede descargar el archivo en local y luego importarlo pero también existe la posbilidad de leer directamente desde internet</li>
+</ul>
+<pre><code>  * http://cpgonzal.github.io/cursoIntroR/ddt.txt
+
+  * http://dl.dropboxusercontent.com/u/17677514/ddt.txt</code></pre>
+</div>
+<div id="importar-conjuntos-de-datos-ii" class="slide section level1">
+<h1>Importar conjuntos de datos (II)</h1>
+<ul>
+<li>La opción 'Conjunto de datos activo' permite:
+<ul>
+<li>Filtrar observaciones (filas) del conjunto de datos</li>
+<li>Ver nombres de las variables (columnas) del conjunto de datos</li>
+<li>Guardar el conjunto de datos (en formato R) o exportar a formato texto plano</li>
+</ul></li>
+</ul>
+<ul>
+<li>La opción 'Modificar variables del conjunto de datos activo' permite:
+<ul>
+<li>Renombrar las variables</li>
+<li>Calcular nuevas variables</li>
+<li>Tipificar o estandarizar las variables</li>
+<li>Reordenar niveles de un factor</li>
+</ul></li>
+</ul>
+</div>
+<div id="análisis-estadísticos" class="slide section level1">
+<h1>Análisis estadísticos</h1>
+<ul>
+<li>El menú Estadísticos nos permite realizar diversos análisis estadísticos.</li>
+</ul>
+<ul>
+<li>En la opción 'Resúmenes' podemos:
+<ul>
+<li>Obtener resúmenes estadísticos de las variables conjunto de datos. Estos resúmenes se pueden hacer por grupos de una variable factor.</li>
+<li>Hallar correlaciones entre variables (Pearson, Spearman, parcial).</li>
+<li>Realizar test de correlaciones significativas y de normalidad de las variables.</li>
+</ul></li>
+</ul>
+<ul>
+<li>La opción 'Gráficas' nos permite complementar los análisis mediante
+<ul>
+<li>Gráficos histograma para estudiar la distribución de los datos</li>
+<li>Diagramas de caja para analizar la varianza de las variables</li>
+</ul></li>
+</ul>
+</div>
+<div id="tablas-de-contingencia-y-tests-de-proporciones" class="slide section level1">
+<h1>Tablas de contingencia y tests de proporciones</h1>
+<ul>
+<li>En la opción 'Tablas de contingencia' podemos generar tablas de contingencia (de doble o múltiple entrada) para analizar relaciones entre dos o más variables factor.
+<ul>
+<li>REQUISITOS: Es preciso tener, al menos, 2 variables factor para generar este tipo de tablas.</li>
+</ul></li>
+</ul>
+<ul>
+<li>A partir de las tablas de doble entrada se pueden realizar tests de independencia de la chi-cuadrado</li>
+</ul>
+<ul>
+<li>En la opción 'Proporciones' podemos realizar pruebas sobre la proporción de éxitos (o de un grupo determinado) en una población
+<ul>
+<li>REQUISITOS: Es preciso tener 1 variable factor con 2 niveles para realizar este test.</li>
+</ul></li>
+</ul>
+</div>
+<div id="ejercicio-5-1" class="slide section level1">
+<h1>Ejercicio 5</h1>
+<ul>
+<li>Realizar un resumen descriptivo de 'DDT_conc' para cada uno de los 2 grupos de observaciones.</li>
+</ul>
+<ul>
+<li>Realizar un test para comparar si la proporción de observaciones en el grupo 1 es igual a la del grupo 2</li>
+</ul>
+<ul>
+<li>Realizar una tabla de contingencia para comparar los 2 grupos de observaciones con las 2 especies de peces.</li>
+</ul>
+<ul>
+<li>PISTA: La variable 'group' ha sido cargada en R como variable numérica y debería ser un factor.</li>
+</ul>
+<ul>
+<li>Realizar un histograma comparativo del 'DDT_conc' del grupo 1 con el grupo 2</li>
+</ul>
+</div>
+<div id="nivel-avanzado-gráficos-más-complejos" class="slide section level1">
+<h1>Nivel avanzado: Gráficos más complejos</h1>
+<ul>
+<li>Se puede hacer un gráfico histograma combinado con diagrama de cajas y añadir una curva de densidad normal</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(devtools)
+<span class="kw">source_gist</span>(<span class="st">&quot;1e7ee71e79346ffdd5a5&quot;</span>)
+<span class="kw">plotHistBox</span>(ddt$length)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot6a.png" />
+</div>
+</div>
+<div id="nivel-avanzado-gráficos-más-complejos-1" class="slide section level1">
+<h1>Nivel avanzado: Gráficos más complejos</h1>
+<ul>
+<li>Los gráficos histogramas también se pueden combinar</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">h1 &lt;-<span class="st"> </span><span class="kw">hist</span>(ddt$weight, <span class="dt">col =</span> <span class="st">&quot;grey60&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Histograma de weight&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;weight&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))
+<span class="kw">with</span>(ddt, <span class="kw">hist</span>(weight[species ==<span class="st"> </span><span class="dv">1</span>], <span class="dt">breaks =</span> h1$breaks, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Histograma de weight&quot;</span>, 
+    <span class="dt">xlab =</span> <span class="st">&quot;weight&quot;</span>))
+<span class="kw">with</span>(ddt, <span class="kw">hist</span>(weight[species ==<span class="st"> </span><span class="dv">2</span>], <span class="dt">breaks =</span> h1$breaks, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>))
+<span class="kw">with</span>(ddt, <span class="kw">hist</span>(weight[species ==<span class="st"> </span><span class="dv">3</span>], <span class="dt">breaks =</span> h1$breaks, <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">add =</span> <span class="ot">TRUE</span>))
+
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">sort</span>(<span class="kw">levels</span>(ddt$species_name), <span class="dt">decreasing =</span> <span class="ot">TRUE</span>), <span class="dt">fill =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, 
+    <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>))</code></pre>
+<div class="figure">
+<img src="assets/fig/plot6b.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los gráficos de cajas y bigotes</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(ddt$DDT_conc, <span class="dt">main =</span> <span class="st">&quot;Diagrama box-and-whisker de DDT_conc&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot7a.png" />
+</div>
+<ul>
+<li>Los gráficos de comparación de cuantiles (qq-plot)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qqnorm</span>(ddt$DDT_conc, <span class="dt">main =</span> <span class="st">&quot;Q-q plot de DDT_conc&quot;</span>)
+<span class="kw">qqline</span>(ddt$DDT_conc, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot7b.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-1" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los gráficos 'Diagrama de dispersión' permiten representar 2 variables y añadir la información de un grupo.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(lattice)
+<span class="kw">scatterplot</span>(length ~<span class="st"> </span>weight |<span class="st"> </span>group, <span class="dt">reg.line =</span> lm, <span class="dt">smooth =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">spread =</span> <span class="ot">FALSE</span>, <span class="dt">boxplots =</span> <span class="ot">FALSE</span>, <span class="dt">span =</span> <span class="fl">0.5</span>, <span class="dt">by.groups =</span> <span class="ot">TRUE</span>, 
+    <span class="dt">reset.par =</span> <span class="ot">FALSE</span>, <span class="dt">data =</span> ddt)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot8a.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-2" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Otro gráfico de 2 variables es 'Gráfica XY'</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(lattice)
+<span class="kw">xyplot</span>(length ~<span class="st"> </span>weight, <span class="dt">groups =</span> group, <span class="dt">type =</span> <span class="st">&quot;p&quot;</span>, <span class="dt">pch =</span> <span class="dv">16</span>, 
+    <span class="dt">auto.key =</span> <span class="kw">list</span>(<span class="dt">border =</span> <span class="ot">TRUE</span>), <span class="dt">data =</span> ddt)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot8b.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-3" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los gráficos 'Matriz de diagrama de dispersión' permiten visualizar múltiples variables</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scatterplotMatrix</span>(~DDT_conc +<span class="st"> </span>length +<span class="st"> </span>weight, <span class="dt">reg.line =</span> lm, <span class="dt">smooth =</span> <span class="ot">FALSE</span>, 
+    <span class="dt">spread =</span> <span class="ot">FALSE</span>, <span class="dt">span =</span> <span class="fl">0.5</span>, <span class="dt">id.n =</span> <span class="dv">0</span>, <span class="dt">diagonal =</span> <span class="st">&quot;histogram&quot;</span>, <span class="dt">data =</span> ddt)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot9.png" />
+</div>
+</div>
+<div id="otros-gráficos-en-rcmdr-4" class="slide section level1">
+<h1>Otros gráficos en Rcmdr</h1>
+<ul>
+<li>Los 'Gráficos de medias' son muy útiles en ANOVAs</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(Rcmdr)
+<span class="kw">plotMeans</span>(ddt$DDT_conc, ddt$species_name, <span class="dt">error.bars =</span> <span class="st">&quot;conf.int&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot10.png" />
+</div>
+</div>
+<div id="tests-de-medias-y-de-varianzas" class="slide section level1">
+<h1>Tests de medias y de varianzas</h1>
+<ul>
+<li>En la opción 'Medias' podemos realizar pruebas sobre la media estadística de una o más poblaciones.
+<ul>
+<li>El test “Test t para una muestra” corresponde a la prueba clásica sobre la media de una población cuando la varianza es desconocida.</li>
+<li>Los “Test t para muestras independientes” y “Test t para datos relacionados” permiten comparar, dadas dos muestras (o dos grupos), las medias de sus respectivas poblaciones.</li>
+<li>REQUISITOS: Para realizar el test de muestras independientes, Rcmdr necesita una variable factor con dos niveles para diferenciar cada muestra.</li>
+<li>Los tests &quot;ANOVA&quot; nos permiten comparar medias para un mayor número de niveles o grupos (2 ó más).</li>
+</ul></li>
+</ul>
+<ul>
+<li>En la opción 'Varianzas' se puede analizar la varianza estadística de una o más poblaciones
+<ul>
+<li>El test F-ratio contrasta, dadas dos muestras, el cociente de varianzas de sus respectivas poblaciones.</li>
+<li>REQUISITOS: De nuevo, en Rcmdr es preciso una variable factor con dos niveles para diferenciar cada muestra.</li>
+<li>Otros tests que permiten comparar la igualdad de varianzas entre mayor número de niveles son el test de Bartlett y el de Levene.</li>
+</ul></li>
+</ul>
+</div>
+<div id="esquema-de-aplicación-de-test-de-comparación-de-medias" class="slide section level1">
+<h1>Esquema de aplicación de test de comparación de medias</h1>
+<object data="figure/test_flowchart.svg" type="image/svg+xml" 
+  width="100%" height="80%" title="Esquema de t-test"> 
+</object>
+
+
+</div>
+<div id="esquema-de-aplicación-de-test-de-comparación-de-medias-medidas-repetidas" class="slide section level1">
+<h1>Esquema de aplicación de test de comparación de medias (medidas repetidas)</h1>
+<object data="figure/test2_flowchart.svg" type="image/svg+xml" 
+  width="100%" height="80%" title="Esquema de t-test"> 
+</object>
+
+</div>
+<div id="ejercicio-6" class="slide section level1">
+<h1>Ejercicio 6</h1>
+<p>Comparar el peso de los peces del grupo 1 con el peso de los del grupo 2.</p>
+<ul>
+<li>1º PASO: ¿Se asume normalidad de la variable peso?</li>
+</ul>
+<div class="figure">
+<img src="assets/fig/plot1.png" />
+</div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">shapiro.test</span>(ddt$weight)</code></pre>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  ddt$weight
+## W = 0.9825, p-value = 0.06299</code></pre>
+<p>Si hay dudas en la normalidad, el t-test no se puede aplicar y hay que acudir a alternativas no paramétricas.</p>
+</div>
+<div id="ejercicio-6-1" class="slide section level1">
+<h1>Ejercicio 6</h1>
+<p>Comparar el peso de los peces del grupo 1 con el peso de los del grupo 2.</p>
+<ul>
+<li>2º PASO: ¿Se asume igualdad de varianzas de peso entre los grupos?<br /><img src="assets/fig/plot2.png" /></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bartlett.test</span>(weight ~<span class="st"> </span>group, <span class="dt">data =</span> ddt)</code></pre>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  weight by group
+## Bartlett&#39;s K-squared = 0.1329, df = 1, p-value = 0.7155</code></pre>
+<p>Si las varianzas entre grupos son iguales, se debe especificar en opciones del t-test (aprox. Welch).</p>
+</div>
+<div id="tests-no-paramétricos" class="slide section level1">
+<h1>Tests no paramétricos</h1>
+<ul>
+<li>En la opción 'Tests no paramétricos' se pueden realizar distintas pruebas de estadísticas cuando no se verifican ciertas hipótesis.
+<ul>
+<li>El “test de Wilcoxon” es equivalente al t-test para muestras independientes cuando no se puede asumir normalidad en los datos.</li>
+<li>El “test de Kruskal-Wallis” y el “test de Friedman” son tests basados en el rango muestral de las observaciones (equivalentes al ANOVA cuando no se puede asumir normalidad).</li>
+</ul></li>
+</ul>
+<ul>
+<li>EJEMPLO: Comparar 'DDT_conc' de los peces del grupo 1 con los del grupo 2.</li>
+</ul>
+</div>
+<div id="modelos-estadísticos-anova" class="slide section level1">
+<h1>Modelos estadísticos: ANOVA</h1>
+<ul>
+<li>La opción 'Medias' permite realizar el análisis de varianza de uno o varios factores para comparar las medias de grupos (similar al t-test pero con 2 o más niveles en las variables factor).</li>
+</ul>
+<ul>
+<li>La opción 'Tests no paramétricos', con los “test de Kruskal-Wallis” y el “test de Friedman”, son pruebas no paramétricas alternativas al ANOVA.</li>
+</ul>
+<ul>
+<li>Junto a la 'Gráfica de las medias' permite llevar a cabo un análisis comparativo de los efectos de los factores y sus interacciones en un modelo.</li>
+</ul>
+</div>
+<div id="esquema-de-aplicación-de-test-anova" class="slide section level1">
+<h1>Esquema de aplicación de test ANOVA</h1>
+<object data="figure/anova_flowchart.svg" type="image/svg+xml" 
+  width="100%" height="80%" title="Esquema de ANOVA"> 
+</object>
+
+</div>
+<div id="ejercicio-7" class="slide section level1">
+<h1>Ejercicio 7</h1>
+<ul>
+<li>EJEMPLO: Analizar las diferencias en el peso de los peces entre las diferentes localizaciones.</li>
+</ul>
+<ul>
+<li>1º PASO: ¿Hay diferencias entre todos los niveles (especies)?</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Comprobamos si la varianza es constante</span>
+<span class="kw">bartlett.test</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)</code></pre>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  weight by location_name
+## Bartlett&#39;s K-squared = 0.7883, df = 2, p-value = 0.6742</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># En caso de homoc. podemos hacer anova</span>
+anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)
+<span class="kw">summary</span>(anova.mod1)</code></pre>
+<pre><code>##                Df   Sum Sq Mean Sq F value Pr(&gt;F)  
+## location_name   2   942700  471350    3.44  0.035 *
+## Residuals     141 19332838  137112                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Si no se asume var. cte. o no hay normalidad, recurrimos al test K.-W.</span>
+<span class="kw">kruskal.test</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)</code></pre>
+<pre><code>## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  weight by location_name
+## Kruskal-Wallis chi-squared = 6.13, df = 2, p-value = 0.04665</code></pre>
+</div>
+<div id="ejercicio-7-1" class="slide section level1">
+<h1>Ejercicio 7</h1>
+<ul>
+<li>EJEMPLO: Analizar las diferencias en el peso de los peces entre las diferentes localizaciones.</li>
+</ul>
+<ul>
+<li>2º PASO: ¿Cómo son las diferencias 2 a 2? (sólo si hay más de 2 niveles en el factor)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">anova.mod1 &lt;-<span class="st"> </span><span class="kw">aov</span>(weight ~<span class="st"> </span>location_name, <span class="dt">data =</span> ddt)
+<span class="kw">summary</span>(<span class="kw">glht</span>(anova.mod1, <span class="dt">linfct =</span> <span class="kw">mcp</span>(<span class="dt">location_name =</span> <span class="st">&quot;Tukey&quot;</span>)))  <span class="co"># pairwise tests</span></code></pre>
+<pre><code>## Error: could not find function &quot;glht&quot;</code></pre>
+<pre><code>## Error: could not find function &quot;glht&quot;</code></pre>
+<div class="figure">
+<img src="assets/fig/plot3.png" />
+</div>
+</div>
+<div id="modelos-estadísticos-anova-de-varios-factores" class="slide section level1">
+<h1>Modelos estadísticos: ANOVA de varios factores</h1>
+<ul>
+<li>En el ANOVA de múltiples factores es posible analizar no sólo los efectos simples sino también las interacciones.</li>
+</ul>
+<div class="figure">
+<img src="assets/fig/plot4.png" />
+</div>
+</div>
+<div id="modelos-estadísticos-regresión" class="slide section level1">
+<h1>Modelos estadísticos: Regresión</h1>
+<ul>
+<li>La opción 'Ajuste de modelos' dispone de múltiples posibilidades para la creación de modelos estadísticos.</li>
+</ul>
+<ul>
+<li>Además, en la opción 'Modelos' se pueden llevar a cabo muchos análisis habituales en el estudio de los mismos.</li>
+</ul>
+<ul>
+<li>En particular, veamos como determinar un modelo de regresión para estudiar la relación entre la longitud y el peso de los peces.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">regmod<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">lm</span>(weight ~<span class="st"> </span>length, <span class="dt">data =</span> ddt)
+<span class="kw">summary</span>(regmod<span class="fl">.1</span>)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = weight ~ length, data = ddt)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -990.0 -189.4  -49.5  193.7  923.2 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -483.67     150.50   -3.21   0.0016 ** 
+## length         35.82       3.47   10.32   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 286 on 142 degrees of freedom
+## Multiple R-squared:  0.429,  Adjusted R-squared:  0.424 
+## F-statistic:  106 on 1 and 142 DF,  p-value: &lt;2e-16</code></pre>
+</div>
+<div id="análisis-de-modelos" class="slide section level1">
+<h1>Análisis de modelos</h1>
+<ul>
+<li>Podemos obtener la correlación de las variables de interés en 'Estadísticos-&gt;Resúmenes'.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(ddt[, <span class="kw">c</span>(<span class="st">&quot;length&quot;</span>, <span class="st">&quot;weight&quot;</span>)], <span class="dt">use =</span> <span class="st">&quot;complete&quot;</span>)</code></pre>
+<pre><code>##        length weight
+## length 1.0000 0.6546
+## weight 0.6546 1.0000</code></pre>
+<ul>
+<li>La representación gráfica de un modelo simple es posible en 'Gráficas-&gt;Diagrama de dispersión' seleccionando la opción de mínimos cuadrados. Pero se puede hacer también con <code>plot()</code> y <code>abline()</code></li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(ddt$length, ddt$weight, <span class="dt">main =</span> <span class="st">&quot;Weight vs. length&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;lenght&quot;</span>, <span class="dt">ylab =</span> <span class="st">&quot;weight&quot;</span>, 
+    <span class="dt">pch =</span> <span class="dv">20</span>)
+<span class="kw">abline</span>(regmod<span class="fl">.1</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot5.png" />
+</div>
+</div>
+<div id="análisis-de-modelos-1" class="slide section level1">
+<h1>Análisis de modelos</h1>
+<ul>
+<li>Con el menú 'Modelos-&gt;Gráficas-&gt;Gráficas básicas de diagnóstico' se pueden obtener una serie de gráficos útiles para el diagnóstico de las hipótesis habituales (homocedasticidad, normalidad, observaciones atípicas)</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))
+<span class="kw">plot</span>(regmod<span class="fl">.1</span>)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot6.png" />
+</div>
+</div>
+<div id="ejercicio-8" class="slide section level1">
+<h1>Ejercicio 8</h1>
+<ul>
+<li>Parece que el modelo <span class="math"><em>w</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em> = <em>β</em><sub>0</sub> + <em>β</em><sub>1</sub><em>l</em><em>e</em><em>n</em><em>g</em><em>t</em><em>h</em> + <em>ε</em></span> presenta problemas.</li>
+</ul>
+<ul>
+<li>SUGERENCIA: Transformar variables <span class="math"><em>l</em><em>e</em><em>n</em><em>g</em><em>t</em><em>h</em> ⇒ <em>l</em><em>e</em><em>n</em><em>g</em><em>t</em><em>h</em><sup>3</sup></span> y <span class="math"><em>w</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em> ⇒ <em>s</em><em>q</em><em>r</em><em>t</em>(<em>w</em><em>e</em><em>i</em><em>g</em><em>h</em><em>t</em>)</span> y volver a hacer el ajuste.</li>
+</ul>
+<ul>
+<li>En Rcmdr se encuentran disponibles otros análisis útiles en regresión (Breusch-Pagan para la homocedasticidad, Durbin-Watson para la independencia).</li>
+</ul>
+</div>
+<div id="nivel-avanzado-intervalos-de-confianza-y-predicción-de-la-regresión" class="slide section level1">
+<h1>Nivel avanzado: Intervalos de confianza y predicción de la regresión</h1>
+<ul>
+<li>Para los modelos lineales simples, se pueden representar los intervalos de confianza y predición de la recta</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r">ddt$length<span class="fl">.3</span> &lt;-<span class="st"> </span>ddt$length^<span class="dv">3</span>
+ddt$sqrt.weight &lt;-<span class="st"> </span><span class="kw">sqrt</span>(ddt$weight)
+<span class="kw">source_gist</span>(<span class="st">&quot;f9b06d411675c1702ccc&quot;</span>)
+<span class="kw">plotConf</span>(sqrt.weight ~<span class="st"> </span>length<span class="fl">.3</span>, ddt)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot11.png" />
+</div>
+</div>
+<div id="modelos-estadísticos-clustering" class="slide section level1">
+<h1>Modelos estadísticos: Clustering</h1>
+<ul>
+<li>La opción 'Análisis dimensional-&gt;Análisis de agrupación' permite aplicar técnicas de cluster.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(devtools)
+<span class="kw">source_gist</span>(<span class="st">&quot;a4b2ed204d01bc12d952&quot;</span>)
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+<span class="kw">plotCluster</span>(<span class="dv">1</span>, ddt[, <span class="kw">c</span>(<span class="st">&quot;length&quot;</span>, <span class="st">&quot;weight&quot;</span>, <span class="st">&quot;DDT_conc&quot;</span>)], ddt$species_name)
+<span class="kw">plotCluster</span>(<span class="dv">2</span>, ddt[, <span class="kw">c</span>(<span class="st">&quot;length&quot;</span>, <span class="st">&quot;weight&quot;</span>, <span class="st">&quot;DDT_conc&quot;</span>)], ddt$species_name)</code></pre>
+<div class="figure">
+<img src="assets/fig/plot12.png" />
+</div>
+</div>
+</body>
+</html>
