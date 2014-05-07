@@ -374,14 +374,14 @@ datos$dias &lt;-<span class="st"> </span>datos$horas/<span class="dv">24</span><
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">datos_filt1 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas del aula 2</span>
 datos_filt1
-## Otra forma:
+<span class="co"># Otra forma:</span>
 cond &lt;-<span class="st"> </span>datos$aula ==<span class="st"> </span><span class="dv">2</span>
 datos_filt1 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas del aula 2</span>
 datos_filt1
 
 datos_filt2 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, sexo ==<span class="st"> </span><span class="dv">1</span>)  <span class="co"># filas del sexo 1</span>
 datos_filt2
-## Otra forma:
+<span class="co"># Otra forma:</span>
 cond &lt;-<span class="st"> </span>datos$sexo ==<span class="st"> </span><span class="dv">1</span>
 datos_filt2 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas del sexo 1</span>
 datos_filt2</code></pre>
