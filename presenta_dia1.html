@@ -374,13 +374,17 @@ datos$dias &lt;-<span class="st"> </span>datos$horas/<span class="dv">24</span><
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">datos_filt1 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, aula ==<span class="st"> </span><span class="dv">2</span>)  <span class="co"># filas del aula 2</span>
 datos_filt1
-<span class="co"># cond&lt;-datos$aula==2 datos_filt1&lt;-datos[cond,] # filas con var1=2</span>
-<span class="co"># datos_filt1</span>
+## Otra forma:
+cond &lt;-<span class="st"> </span>datos$aula ==<span class="st"> </span><span class="dv">2</span>
+datos_filt1 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas del aula 2</span>
+datos_filt1
 
 datos_filt2 &lt;-<span class="st"> </span><span class="kw">subset</span>(datos, sexo ==<span class="st"> </span><span class="dv">1</span>)  <span class="co"># filas del sexo 1</span>
 datos_filt2
-<span class="co"># cond&lt;-datos$sexo==1 datos_filt2&lt;-datos[cond,] # filas con sexo=1</span>
-<span class="co"># datos_filt2</span></code></pre>
+## Otra forma:
+cond &lt;-<span class="st"> </span>datos$sexo ==<span class="st"> </span><span class="dv">1</span>
+datos_filt2 &lt;-<span class="st"> </span>datos[cond, ]  <span class="co"># filas del sexo 1</span>
+datos_filt2</code></pre>
 <ul>
 <li>Si queremos combinar condiciones utilizamos los operadores <code>&amp;</code> (AND) y <code>|</code> (OR). Por ejemplo:</li>
 </ul>
